@@ -6,7 +6,7 @@ import adminRouter from "./routes/admin-routes.js";
 import movieRouter from "./routes/movie-routes.js";
 import bookingsRouter from "./routes/booking-routes.js";
 import cors from "cors";
-import path from "path";
+// import path from "path";
 
 dotenv.config();
 const app = express();
@@ -20,13 +20,13 @@ app.use("/movie", movieRouter);
 app.use("/booking", bookingsRouter);
 
 //rest api Deployment
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname, "./client/build")));
+// app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
-});
+// app.get('*', function (req, res) {
+//     res.sendFile(path.join(__dirname, './client/build/index.html'));
+// });
 
 mongoose
     .connect(
